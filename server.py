@@ -24,9 +24,11 @@ is_playing = False
 #####################################
 
 
+from dotenv import load_dotenv
 
+load_dotenv()
 
-api_key = "MnOJOWe78ITuMe9VXRxhBTSnysQT9JvR"
+api_key = os.environ["MISTRAL"]
 model = "mistral-large-latest"
 
 client = MistralClient(api_key=api_key)
