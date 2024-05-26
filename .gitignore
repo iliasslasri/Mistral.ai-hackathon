@@ -3,6 +3,5 @@
 *.avi
 *.pt
 *football-players-detection-1*
-training/runs
-models
-*.mp4
+output_videos
+output_images

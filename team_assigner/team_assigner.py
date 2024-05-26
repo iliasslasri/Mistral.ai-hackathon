@@ -8,6 +8,7 @@ class TeamAssigner:
     def get_clustering_model(self,image):
         # Reshape the image to 2D array
         image_2d = image.reshape(-1,3)
+
         # Preform K-means with 2 clusters
         kmeans = KMeans(n_clusters=2, init="k-means++",n_init=1).fit(image_2d)
 
@@ -15,6 +16,7 @@ class TeamAssigner:
 
     def get_player_color(self,frame,bbox):
         image = frame[int(bbox[1]):int(bbox[3]),int(bbox[0]):int(bbox[2])]
+
         top_half_image = image[0:int(image.shape[0]/2),:]
 
         # Get Clustering model
@@ -37,6 +39,7 @@ class TeamAssigner:
 
 
     def assign_team_color(self,frame, player_detections):
+        
         player_colors = []
         for _, player_detection in player_detections.items():
             bbox = player_detection["bbox"]

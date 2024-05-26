@@ -117,6 +117,7 @@ def main():
                 GRIDS.append(text)
             except Exception as err:
                 pass
+    print(len(GRIDS))
     return GRIDS
             
     
