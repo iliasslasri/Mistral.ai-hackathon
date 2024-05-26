@@ -95,14 +95,23 @@ def main():
                 grid = [['. ' for _ in range(num_cells_width)] for _ in range(num_cells_height)]
 
                 # Place the players on the grid
+                
                 for player_id, player in player_data.items():
                     x, y = player['position']
                     cell_x = x // cell_size
                     cell_y = y // cell_size
-                    if player['team'] == 1:
-                        grid[cell_y][cell_x] = f'{player_id}A '
+                    if('speed' in player):
+                        player_speed = player['speed']
+                        if player['team'] == 1:
+                            grid[cell_y][cell_x] = f'{player_id}A ({player_speed})'
+                        else:
+                            grid[cell_y][cell_x] = f'{player_id}B ({player_speed})'
                     else:
-                        grid[cell_y][cell_x] = f'{player_id}B '
+                        if player['team'] == 1:
+                            grid[cell_y][cell_x] = f'{player_id}A ({player_speed})'
+                        else:
+                            grid[cell_y][cell_x] = f'{player_id}B ({player_speed})'
+                        
                 x1, y1,x2,y2 = ball_data[1]['bbox']
                 x , y = int((x1+x2)/2) , int((y1+y2)/2)
                 cell_x = x // cell_size
@@ -114,8 +123,10 @@ def main():
                     text += ''.join(row)
                     text+="\n"
                     text += '#' * num_cells_width
+                print(text)
                 GRIDS.append(text)
             except Exception as err:
+                
                 pass
     print(len(GRIDS))
     return GRIDS
