@@ -6,3 +6,7 @@
 training/runs
 models
 *.mp4
+
+mistral_models
+mistral_models/*
+data1.txt
