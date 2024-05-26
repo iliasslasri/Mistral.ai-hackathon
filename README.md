@@ -21,7 +21,7 @@ After the training, copy the `best.pt` model in the `models` folder at the root 
 
 The project uses [Streamlit](https://streamlit.io/), so to run the app please run
 ```
-streamlit run app.py
+streamlit run server.py
 ```
 
 ## Context of this project

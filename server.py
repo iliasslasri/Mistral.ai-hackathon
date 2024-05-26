@@ -3,7 +3,7 @@ import time
 from streamlit_elements import elements, mui, html
 from pytube import YouTube
 import os
-from main import main
+from yolo_game_detector import main
 from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
 from utils import read_video, save_video
