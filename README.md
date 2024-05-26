@@ -1,71 +1,43 @@
-# Football Analysis using YOLO
+# Hey Mistral, comment me this match
 
-This project employs YOLO (You Only Look Once) object detection to conduct comprehensive analysis of football matches. The goal is to provide detailed insights into player performance, team dynamics, ball possession, and camera movements during a match.
+This project aims to use the [MistralAI Large model](https://mistral.ai/fr/news/mistral-large/) to comment a football match.
 
 <p><img height="400" width="1000" src="https://github.com/rajveersinghcse/rajveersinghcse/blob/master/img/Football-Analysis.gif" alt="demo"></p>
 
+The app employs YOLO (You Only Look Once) object detection to conduct comprehensive analysis of football matches. The goal is to provide detailed insights into player performance, team dynamics, ball possession which are passed through the MistralAI Large model to comment the match.
+
 ## Installation
 
-1. **Clone the Repository:**
+Before playing with the app, please install the requirements in your python environment
+```
+python -m pip install -r requirements.txt
+```
 
-   ```bash
-   git clone https://github.com/rajveersinghcse/football-analysis-using-yolo.git
-   cd football-analysis-using-yolo
-   ```
-
-2. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-The following libraries are used in this project:
-
-- ultralytics
-- numpy
-- opencv-python
-- roboflow
-- pandas
-- pickle
-- supervision
-- shutil
-- scikit-learn
+As said below, the project uses a Yolov8n to detect players. <br>
+To train the model on a football specific dataset, use the Roboflow framework and the "football-players-detection-3zvbc" dataset.
+After the training, copy the `best.pt` model in the `models` folder at the root of this project.
 
 ## Usage
 
-1. **Data Preparation:**
+The project uses [Streamlit](https://streamlit.io/), so to run the app please run
+```
+streamlit run app.py
+```
 
-   - Place your video footage of the football match in the `input` directory.
+## Context of this project
 
-2. **Running the Analysis:**
-
-   - Execute the main script `python main.py` to initiate the analysis process.
-   - The analysis encompasses the following key steps:
-     - Object tracking using YOLO for players, referees, and the football.
-     - Estimating camera movements to understand viewpoint changes.
-     - Calculating player speed, distance traveled, and determining ball possession.
-     - Visualizing analysis results on the video frames.
-
-3. **Output:**
-   - The annotated and analyzed video will be saved in the `output_videos` directory for review.
-
-## Code Structure
-
-- **`utils.py`**: Contains utility functions for video I/O operations.
-- **`trackers.py`**: Implements the YOLO-based object tracker and interpolation techniques.
-- **`team_assigner.py`**: Assigns teams to players based on their visual appearance.
-- **`player_ball_assigner.py`**: Determines ball possession among players during the match.
-- **`camera_movement_estimator.py`**: Estimates camera movements to analyze perspective changes.
-- **`view_transformer.py`**: Transforms object positions based on the camera view for accurate analysis.
-- **`speed_and_distance_estimator.py`**: Calculates player speeds and distances traveled for performance evaluation.
-
-## Contributing
-
-Contributions, feedback, and suggestions are highly encouraged! Please feel free to open an issue or submit a pull request with any improvements or new features.
+This project has been conducted during the [MistralAI Hackathon](https://partiful.com/e/EFvUkVMiTCP2cVrRU1cD). <br>
+The team was composed of:
+- Chems
+- Amir
+- Iliass
+- Vincent
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This repository has a MIT license, as found in the [LICENSE](./LICENSE) file.
 
 ## Acknowledgements
 
-Special thanks to the YOLOv5 team and the contributors of the libraries used in this project for their valuable contributions to the field of object detection and analysis in computer vision.
+Special thanks to the Ultralytics team and the creator of the [Football Analysis repository](https://github.com/rajveersinghcse/Football-Analysis-using-YOLO) the contributors of the libraries used in this project for their valuable contributions to the field of object detection and analysis in computer vision.
+
