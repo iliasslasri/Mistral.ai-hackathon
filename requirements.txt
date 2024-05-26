@@ -7,3 +7,9 @@ pickle
 supervision
 shutil
 scikit-learn
+mistralai
+mistral-inference
+requests
+streamlit
+streamlit_elements
+
