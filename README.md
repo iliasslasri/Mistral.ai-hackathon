@@ -2,7 +2,7 @@
 
 This project aims to use the [MistralAI Large model](https://mistral.ai/fr/news/mistral-large/) to comment a football match.
 
-<p><img height="400" width="1000" src="https://github.com/rajveersinghcse/rajveersinghcse/blob/master/img/Football-Analysis.gif" alt="demo"></p>
+<p><img height="400" width="1000" src="./docs/animationApp.gif" alt="demo"></p>
 
 The app employs YOLO (You Only Look Once) object detection to conduct comprehensive analysis of football matches. The goal is to provide detailed insights into player performance, team dynamics, ball possession which are passed through the MistralAI Large model to comment the match.
 
